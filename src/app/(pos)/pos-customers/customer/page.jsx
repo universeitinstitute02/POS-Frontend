@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import PosCustomersLayout from '@/components/PosCustomersLayout';
 import { FcSearch } from 'react-icons/fc';
+import { HiOutlineSearch } from 'react-icons/hi';
 
 const PosCustomer = () => {
     useEffect(() => {
