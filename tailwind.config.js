@@ -3,9 +3,7 @@ import daisyui from 'daisyui';
 
 export default {
   content: [
-    "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
   ],
   theme: {
     extend: {
@@ -31,9 +29,12 @@ export default {
         lg: "0.5rem",
         xl: "0.75rem",
         '2xl': "1rem",
+        '3xl': "1.5rem",
       },
       boxShadow: {
-        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.02)',
+        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+        'premium': '0 20px 40px -15px rgba(79, 70, 229, 0.15)',
       }
     },
   },

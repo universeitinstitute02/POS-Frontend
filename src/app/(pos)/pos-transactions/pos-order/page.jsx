@@ -13,28 +13,30 @@ const PosTransOrder = () => {
             <PosTransactionLayout />
 
             <div className="mt-4">
-                <div className="flex text-[11px] gap-1 pt-2 text-[#C5522A] items-center flex-wrap">
-                    <button className='text-white bg-blue-600 px-2 rounded-sm'><span className='border-b border-white'>N</span>ew</button>
-                    <div className="flex gap-1 items-center">
+                <div className="grid grid-cols-2 md:flex text-[11px] gap-2 pt-2 text-[#C5522A] items-end flex-wrap">
+                    <button className='text-white bg-blue-600 px-2 py-1 rounded-sm col-span-2 md:col-span-1 md:w-auto h-fit'><span className='border-b border-white'>N</span>ew</button>
+                    <div className="flex flex-col gap-1 w-full md:w-auto">
                         <p>Date</p>
-                        <input type="date" name="date" className='border-[1px] rounded border-gray-400 text-black px-1 outline-none focus:ring-1 focus:ring-blue-500' />
+                        <input type="date" name="date" className='border-[1px] rounded w-full border-gray-400 text-black px-1 py-0.5 outline-none focus:ring-1 focus:ring-blue-500' />
                     </div>
-                    <div className="flex gap-1 items-center">
+                    <div className="flex flex-col gap-1 w-full md:w-auto">
                         <p>Customer Number</p>
-                        <input type="text" className='border-[1px] rounded border-gray-400 text-black w-28 px-1 focus:bg-focusColor outline-none' />
+                        <input type="text" className='border-[1px] rounded w-full md:w-28 border-gray-400 text-black px-1 py-0.5 focus:bg-focusColor outline-none' />
                     </div>
-                    <div className="flex gap-1 items-center">
+                    <div className="flex flex-col gap-1 w-full md:w-auto">
                         <p>Disc. Overall(%)</p>
-                        <input type="text" className='border-[1px] rounded border-gray-400 text-black w-16 px-1 focus:bg-focusColor outline-none' defaultValue='0.0' />
+                        <input type="text" className='border-[1px] rounded w-full md:w-16 border-gray-400 text-black px-1 py-0.5 focus:bg-focusColor outline-none' defaultValue='0.0' />
                     </div>
-                    <div className="flex gap-1 items-center">
+                    <div className="flex flex-col gap-1 w-full md:w-auto">
                         <p>Disc. Overall- Fixed</p>
-                        <input type="text" className='border-[1px] rounded border-gray-400 text-black w-16 px-1 focus:bg-focusColor outline-none' defaultValue='0.0' />
+                        <input type="text" className='border-[1px] rounded w-full md:w-16 border-gray-400 text-black px-1 py-0.5 focus:bg-focusColor outline-none' defaultValue='0.0' />
                     </div>
-                    <button className='bg-gray-400 px-2 pb-[1px] text-sm text-white rounded-sm'>Change</button>
-                    <button className='bg-blue-600 px-2 pb-[1px] text-sm text-white rounded-sm'>Initialize</button>
-                    <button className='bg-blue-600 px-2 pb-[1px] text-sm text-white rounded-sm'>Load_Item</button>
-                    <button className='bg-blue-600 px-2 pb-[1px] text-sm text-white rounded-sm'>Reset Discount</button>
+                    <div className="col-span-2 md:col-span-1 flex flex-wrap gap-2 mt-2 md:mt-0">
+                        <button className='bg-gray-400 px-2 py-1 text-sm text-white rounded-sm'>Change</button>
+                        <button className='bg-blue-600 px-2 py-1 text-sm text-white rounded-sm'>Initialize</button>
+                        <button className='bg-blue-600 px-2 py-1 text-sm text-white rounded-sm'>Load_Item</button>
+                        <button className='bg-blue-600 px-2 py-1 text-sm text-white rounded-sm'>Reset Discount</button>
+                    </div>
                 </div>
 
                 <div className="text-xs flex flex-col md:flex-row pt-4 gap-4">
@@ -51,37 +53,37 @@ const PosTransOrder = () => {
                                 <button className='px-3 py-1 text-white bg-[#A98540] hover:bg-[#CEB37F] rounded transition-colors'>Delete</button>
                                 <button className='px-3 py-1 text-white bg-blue-600 hover:bg-blue-400 rounded transition-colors'>-</button>
                             </div>
-                            <div className="flex gap-4 px-2 pt-3 flex-wrap items-center">
-                                <div className="flex gap-1 items-center">
+                            <div className="flex gap-4 px-2 pt-3 flex-wrap items-end">
+                                <div className="flex flex-col gap-1 w-full sm:w-auto">
                                     <span className="text-gray-600">Row</span>
-                                    <span className="font-bold">0</span>
+                                    <span className="font-bold border px-2 py-0.5 rounded bg-slate-50">0</span>
                                 </div>
-                                <div className="flex gap-1 items-center">
+                                <div className="flex flex-col gap-1 w-full sm:w-auto">
                                     <label>Action</label>
-                                    <select name="action" className='rounded border border-gray-400 px-1 outline-none'>
+                                    <select name="action" className='rounded w-full border border-gray-400 px-1 py-0.5 outline-none'>
                                         <option value="sales">Sales</option>
                                         <option value="return">Return</option>
                                     </select>
                                 </div>
-                                <div className="flex gap-1 items-center">
+                                <div className="flex flex-col gap-1 w-full sm:w-auto">
                                     <p>Items Code</p>
-                                    <input type="text" className='rounded border border-gray-400 w-28 px-1 focus:bg-focusColor outline-none' autoFocus/>
+                                    <input type="text" className='rounded w-full sm:w-28 border border-gray-400 px-1 py-0.5 focus:bg-focusColor outline-none' autoFocus/>
                                 </div>
-                                <div className="flex gap-1 items-center">
+                                <div className="flex flex-col gap-1 w-full sm:w-auto">
                                     <p>Qty</p>
-                                    <input type="text" className='rounded border border-gray-400 w-14 px-1 focus:bg-focusColor outline-none' defaultValue='1' />
+                                    <input type="text" className='rounded w-full sm:w-14 border border-gray-400 px-1 py-0.5 focus:bg-focusColor outline-none' defaultValue='1' />
                                 </div>
-                                <div className="flex gap-1 items-center">
+                                <div className="flex flex-col gap-1 w-full sm:w-auto">
                                     <p>Unit Price</p>
-                                    <input type="text" className='rounded border border-gray-400 w-14 px-1 focus:bg-focusColor outline-none' defaultValue='0.000' />
+                                    <input type="text" className='rounded w-full sm:w-14 border border-gray-400 px-1 py-0.5 focus:bg-focusColor outline-none' defaultValue='0.000' />
                                 </div>
-                                <div className="flex gap-1 items-center">
+                                <div className="flex flex-col gap-1 w-full sm:w-auto">
                                     <p>Disc%</p>
-                                    <input type="text" className='rounded border border-gray-400 w-14 px-1 focus:bg-focusColor outline-none' defaultValue='0.000' />
+                                    <input type="text" className='rounded w-full sm:w-14 border border-gray-400 px-1 py-0.5 focus:bg-focusColor outline-none' defaultValue='0.000' />
                                 </div>
-                                <div className="flex gap-1 items-center">
+                                <div className="flex flex-col gap-1 w-full sm:w-auto">
                                     <p>Fixed Disc</p>
-                                    <input type="text" className='rounded border border-gray-400 w-14 px-1 focus:bg-focusColor outline-none' defaultValue='0.000' />
+                                    <input type="text" className='rounded w-full sm:w-14 border border-gray-400 px-1 py-0.5 focus:bg-focusColor outline-none' defaultValue='0.000' />
                                 </div>
                             </div>
                         </div>

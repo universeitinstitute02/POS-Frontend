@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import apis from '@/src/axiospublic';
+import apis from '@/src/app/lib/axiospublic';
 
 import { HiOutlineMap, HiOutlinePlus, HiOutlinePencilAlt, HiOutlineTrash, HiOutlineCheck, HiOutlineX } from 'react-icons/hi';
 

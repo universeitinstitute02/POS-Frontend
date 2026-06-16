@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import api from '@/src/axiospublic';
+import api from '@/src/app/lib/axiospublic';
 import { HiOutlineMail, HiOutlineLockClosed, HiOutlineArrowRight } from 'react-icons/hi';
 
 const LoginPage = () => {

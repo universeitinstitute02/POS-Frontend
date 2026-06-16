@@ -19,7 +19,7 @@ import { IoSettingsSharp } from 'react-icons/io5';
 
 const Layout = ({ children }) => {
     const [activeMenu, setActiveMenu] = useState(null);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
@@ -62,17 +62,30 @@ const Layout = ({ children }) => {
 
     return (
         <div className="flex min-h-screen bg-slate-50">
+            {/* Mobile Sidebar Overlay */}
+            {isSidebarOpen && (
+                <div 
+                    className="fixed inset-0 bg-slate-900/50 z-40 lg:hidden transition-opacity"
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
+
             {/* Sidebar */}
             <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 transition-transform duration-300 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
                 <div className="flex flex-col h-full">
-                    <div className="p-6 flex items-center gap-3">
-                        <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">P</div>
-                        <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">POS System</span>
+                    <div className="p-6 flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">P</div>
+                            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">POS System</span>
+                        </div>
+                        <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-2 text-slate-400 hover:text-slate-600">
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
                     </div>
 
-                    <nav className="flex-1 px-4 space-y-1">
+                    <nav className="flex-1 px-4 space-y-1 overflow-y-auto">
                         {sidebarItems.map((item) => (
-                            <Link key={item.name} href={item.href} className={navLinkClass(item.active)}>
+                            <Link key={item.name} href={item.href} onClick={() => setIsSidebarOpen(false)} className={navLinkClass(item.active)}>
                                 <item.icon className={`w-5 h-5 ${item.active ? 'text-white' : 'text-slate-400 group-hover:text-indigo-600'}`} />
                                 <span className="font-medium">{item.name}</span>
                             </Link>
@@ -121,13 +134,13 @@ const Layout = ({ children }) => {
                 </header>
 
                 {/* Content Area */}
-                <main className="p-4 lg:p-8 flex-grow">
+                <main className="p-4 lg:p-8 flex-grow ml-60">
                     <div className="max-w-7xl mx-auto">
                         {children}
                     </div>
                 </main>
 
-                <footer className="px-8 py-4 text-center text-slate-400 text-xs border-t border-slate-100">
+                <footer className="px-8 py-4 text-center text-black text-xs border-t border-slate-100">
                     &copy; 2026 Professional POS System. All rights reserved.
                 </footer>
             </div>
